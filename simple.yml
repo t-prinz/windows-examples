@@ -1,7 +1,9 @@
-
 ---
 - name:  Simple playbook to interact with a Windows System
   hosts:  all
   tasks:
     - name:  Test communications
-      wing_ping:
+      win_ping:
+
+    - name:  Gather facts
+      setup:
