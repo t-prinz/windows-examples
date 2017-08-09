@@ -4,6 +4,3 @@
   tasks:
     - name:  Test communications
       win_ping:
-
-    - name:  Gather facts
-      setup:
