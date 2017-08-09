@@ -1,0 +1,8 @@
+---
+- name:  Download a sample image
+  hosts:  all
+  tasks:
+    - name: Download earthrise.jpg to specified path
+      win_get_url:
+        url: http://www.example.com/earthrise.jpg
+        dest: C:\Users\Administrator\Desktop\earthrise.jpg
