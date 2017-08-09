@@ -1,0 +1,8 @@
+---
+- name:  Download a PowerShell script
+  hosts:  all
+  tasks:
+    - name: Download script that enables remote PowerShell
+      win_get_url:
+        url: https://github.com/ansible/ansible/blob/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+        dest: C:\Users\Administrator\Desktop\ConfigureRemotingForAnsible.ps1
