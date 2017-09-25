@@ -1,0 +1,10 @@
+---
+- name: Delete a user
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Delete User
+      win_user:
+        name: "{{ local_uname }}"
+        password: "{{ local_passwd }}"
+        state: absent
