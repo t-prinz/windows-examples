@@ -1,0 +1,19 @@
+# From https://www.youtube.com/watch?v=Hdvsibu2cok&feature=youtu.be
+- hosts:  tag_type_insights
+  vars:
+    mitigate:  false
+    mitigate_boolean:  '{{ mitigate|default(false)|bool }}'
+  tasks:
+    - block:
+      - name:  update kernel
+        yum:  name=kernel state=latest
+      - name:  reboot the machine
+        shell:  sleep 2 && shutdown -r now 'Ansible triggered reboot'
+        async:  1
+        poll:  0
+      - name:  waiting for server to come back
+        local_action:  wait_for_host={{ inventory_hostname }} port=22 delay=5 state=started
+      when:  not mitigate_boolean
+    - name:  run insights
+      shell:  redhat-access-insights
+      changed_when:  false
