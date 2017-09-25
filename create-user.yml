@@ -5,6 +5,6 @@
   tasks:
     - name: Add User
       win_user:
-        name: "{{ local_uname: }}"
+        name: "{{ local_uname }}"
         password: "{{ local_passwd }}"
         state: present
