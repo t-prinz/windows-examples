@@ -7,3 +7,6 @@
 
     - name:  Gather facts
       setup:
+
+    - debug:
+        msg:  "var value is {{ local_uname }}"
