@@ -1,12 +1,10 @@
 ---
 - name:  Simple playbook to interact with a Windows System
   hosts:  all
+
   tasks:
     - name:  Test communications
       win_ping:
 
     - name:  Gather facts
       setup:
-
-    - debug:
-        msg:  "var value is {{ local_uname }}"
