@@ -2,7 +2,6 @@
 - name:  Simple playbook to interact with a Windows System
   hosts:  all
   vars_files:
-    - secret/creds
     - secret/playvars
 
   tasks:
