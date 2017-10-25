@@ -2,6 +2,9 @@
 - name: Add a user
   hosts: all
   gather_facts: false
+  vars_files:
+    - secret/creds
+    - secret/playvars
   tasks:
     - name: Add User
       win_user:
